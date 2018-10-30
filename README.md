@@ -24,3 +24,5 @@ represents your best code.
 * **Run the application using** - *gradle bootRun* - **assuming Gradle is locally installed**
 * **If Gradle is not installed, use the gradle wrapper task** - *./gradlew bootRun*
 * **To run the test, simply run** - *gradle test* **or** - *./gradlew test*
+
+* **Once the application starts, access it using** - *http://localhost:8080/*
