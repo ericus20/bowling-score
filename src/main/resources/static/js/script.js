@@ -1,3 +1,4 @@
+const appUrl = window.location.protocol + "//" + window.location.host + "/";
 
 window.onload = function() {
     $('#replay-hidden').hide();
@@ -78,7 +79,7 @@ function computeFinalScore(scores) {
     $.ajax({
 
         type: "POST",
-        url: "http://localhost:8080/computeScore",
+        url: appUrl + "/computeScore",
         data: "scores=" + scores,
         success: function (output) {
             console.log("success" + output);

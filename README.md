@@ -26,3 +26,10 @@ represents your best code.
 * **To run the test, simply run** - *gradle test* **or** - *./gradlew test*
 
 * **Once the application starts, access it using** - *http://localhost:8080/*
+
+* **An instance of this application has been deployed to heroku** -*https://bowling-calculator-solution.herokuapp.com/*
+* **This application has also been deployed to** -*https://hackstreetboys.sytes.net/bowling-score-calculator/*
+
+* **A docker image with the name** - *docker.io/ericus20/bowling-solution* - **is exposed on port** - *8080* -
+
+
