@@ -19,6 +19,8 @@ represents your best code.
 ## Instructions
 
 * **Clone the project using the http link**
+* **Import the project to IDE if prefered using Gradle option**
+* **Gradle wrapper can be executed from the tasks listed in the IDE after importing if Gradle is not instaled**
 * **Run the application using** - *gradle bootRun* - **assuming Gradle is locally installed**
 * **If Gradle is not installed, use the gradle wrapper task** - *./gradlew bootRun*
 * **To run the test, simply run** - *gradle test* **or** - *./gradlew test*
