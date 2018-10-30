@@ -13,33 +13,11 @@
 
 
     <div class="score-buttons"><!-- Start of score buttons -->
-        <div class="row">
-            <div class="col-md-8 offset-4">
-                <div id="score-buttons" class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                    <div class="btn-group mr-2" role="group" aria-label="First group">
-                        <button type="button" id="btn0" class="btn btn-secondary">0</button>
-                        <button type="button" id="btn1" class="btn btn-secondary">1</button>
-                        <button type="button" id="btn2" class="btn btn-secondary">2</button>
-                        <button type="button" id="btn3" class="btn btn-secondary">3</button>
-                        <button type="button" id="btn4" class="btn btn-secondary">4</button>
-                    </div>
-                    <div class="btn-group mr-2" role="group" aria-label="Second group">
-                        <button type="button" id="btn5" class="btn btn-secondary">5</button>
-                        <button type="button" id="btn6" class="btn btn-secondary">6</button>
-                        <button type="button" id="btn7" class="btn btn-secondary">7</button>
-                        <button type="button" id="btn8" class="btn btn-secondary">8</button>
-                    </div>
-                    <div class="btn-group" role="group" aria-label="Third group">
-                        <button type="button" id="btn9" class="btn btn-secondary">9</button>
-                        <button type="button" id="btn10" class="btn btn-secondary">10</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div th:replace="common/template :: common-buttons"></div>
     </div><!-- End of score buttons -->
 
 
-    <div id="score-table-display">
+    <div id="score-table-display"><!--Start of score table-->
         <table class="table score-table-display" cellpadding="1" cellspacing="0">
             <tr>
                 <th colspan='6'>Frame 1</th>
@@ -66,9 +44,9 @@
                 <td colspan='2'></td><td colspan='2'></td><td colspan='2'></td>
             </tr>
         </table>
-    </div>
+    </div><!--End of score table-->
 
-    <div class="row">
+    <div class="row"><!--Start of output and reset button-->
         <div class="col-md-6 offset-5">
             Total Score: <span id="result"></span>
             <hr/>
@@ -76,7 +54,7 @@
                 <button id="replay" class="btn btn-outline-success">Compute again?</button>
             </div>
         </div>
-    </div>
+    </div><!--End of output and reset button-->
 
 </div><!--End of Container-->
 

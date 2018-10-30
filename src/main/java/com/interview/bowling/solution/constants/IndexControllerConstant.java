@@ -1,4 +1,4 @@
-package com.interview.bowling.solution.constants.index;
+package com.interview.bowling.solution.constants;
 
 /**
  * This class holds all constants used by the Index Controller.

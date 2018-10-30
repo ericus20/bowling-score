@@ -1,7 +1,7 @@
 package com.interview.bowling.solution.controller;
 
-import static com.interview.bowling.solution.constants.index.IndexControllerConstant.INDEX_URL_MAPPING;
-import static com.interview.bowling.solution.constants.index.IndexControllerConstant.INDEX_VIEW_NAME;
+import static com.interview.bowling.solution.constants.IndexControllerConstant.INDEX_URL_MAPPING;
+import static com.interview.bowling.solution.constants.IndexControllerConstant.INDEX_VIEW_NAME;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,7 +1,8 @@
 package com.interview.bowling.solution.backend.service.impl;
 
-import com.interview.bowling.solution.backend.persistence.pojo.Frame;
+import com.interview.bowling.solution.backend.domain.Frame;
 import com.interview.bowling.solution.backend.service.ScoreService;
+import com.interview.bowling.solution.enums.FrameOutcome;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -51,9 +52,9 @@ public class ScoresServiceImpl implements ScoreService {
       }
 
       // if the frame is with a bonus, then make correction for the computed accounted for in bonus
-      if (frame.length == 11 && frame[9].isStrike()) {
+      if (frame.length == 11 && frame[9].getFrameOutcome() == FrameOutcome.STRIKE) {
         sum -= 20;
-      } else if (frame.length == 11 && frame[9].isSpare()) {
+      } else if (frame.length == 11 && frame[9].getFrameOutcome() == FrameOutcome.SPARE) {
         sum -= 5;
       }
     } catch (Exception e) {

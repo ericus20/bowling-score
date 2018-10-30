@@ -24,7 +24,7 @@ $(document).ready( function () {
 
         if (e.target.innerHTML === "10") {
             if ((scorePosition % 2) === 0 || frameCounter >= 9) {
-                updateRollDisplay(scorePosition, frameCounter, "X");
+                renderRollOnPage(scorePosition, frameCounter, "X");
                 strike = true;
             }
 
@@ -36,13 +36,11 @@ $(document).ready( function () {
 
         }  else {
 
-            console.log("Parsed value " + this.previousValue);
-
             if (scorePosition === 1 && this.previousValue + Number.parseInt(e.target.innerHTML) === 10) {
-                updateRollDisplay(scorePosition, frameCounter, "/");
+                renderRollOnPage(scorePosition, frameCounter, "/");
                 spare = true;
             } else {
-                updateRollDisplay(scorePosition, frameCounter, e.target.innerHTML);
+                renderRollOnPage(scorePosition, frameCounter, e.target.innerHTML);
             }
 
             scorePosition++;
@@ -65,8 +63,6 @@ $(document).ready( function () {
         } else if (frameCounter === 9 && scorePosition === 3 || array.length === 21) {
             computeFinalScore(array);
         }
-        // console.log("score position " + scorePosition);
-        // console.log("frame counter " + frameCounter);
         this.previousValue = parseInt(e.target.innerHTML);
     });
 
@@ -74,15 +70,12 @@ $(document).ready( function () {
 
 function computeFinalScore(scores) {
 
-    console.log("In method with length = " + scores.length);
-
     $.ajax({
 
         type: "POST",
         url: appUrl + "/computeScore",
         data: "scores=" + scores,
         success: function (output) {
-            console.log("success" + output);
             $('#result').html(output);
             $('#replay-hidden').show();
         },
@@ -95,6 +88,6 @@ function computeFinalScore(scores) {
 
 }
 
-function updateRollDisplay(position, frame, content) {
+function renderRollOnPage(position, frame, content) {
     $('#score-table-display tr:eq(1) td:eq(' + ((frame * 2) + position) + ')').html(content);
 }

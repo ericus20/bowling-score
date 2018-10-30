@@ -30,6 +30,6 @@ represents your best code.
 * **An instance of this application has been deployed to heroku** -*https://bowling-calculator-solution.herokuapp.com/*
 * **This application has also been deployed to** -*https://hackstreetboys.sytes.net/bowling-score-calculator/*
 
-* **A docker image with the name** - *docker.io/ericus20/bowling-solution* - **is exposed on port** - *8080* -
+* **A docker image with the name** - *[ericus20/bowling-solution](https://hub.docker.com/r/ericus20/bowling-solution/)* - **is exposed on port** - *8080* -
 
 

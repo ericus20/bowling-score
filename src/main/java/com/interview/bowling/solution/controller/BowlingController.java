@@ -31,29 +31,49 @@ public class BowlingController {
     String[] values = scores.split(",");
 
     StringBuilder stringBuilder = new StringBuilder();
-    for (int i = 0; i < values.length;) {
-      if (values[i].equals("X")) {
-        if (i < 10)
-          stringBuilder.append(values[i]).append("-");
-        else
-          stringBuilder.append(values[i]);
-        i++;
-      } else {
-        if (i + 1 < values.length) {
-          stringBuilder.append(values[i]).append(values[i + 1]).append("-");
-          i += 2;
-        } else {
-          stringBuilder.append(values[i]);
-          i++;
-        }
-      }
-    }
 
+    // build the desired value to be computed.
+    buildScoreFromInput(values, stringBuilder);
+
+    // if there is any excess (-) at the end of the builder, remove it since it's not needed.
     if (stringBuilder.length() != 0 && stringBuilder.charAt(stringBuilder.length() - 1) == '-') {
       stringBuilder.delete(stringBuilder.length() - 2, stringBuilder.length() - 1);
     }
 
+    // trim to ensure we don't have any noise around the input.
     String input = (stringBuilder.toString().trim());
+
+    // return the computed score for the input scores.
     return scoreService.computeScore(input);
+  }
+
+  /**
+   * Builds the score in the desirable fashion (X-X-X... ).
+   *
+   * @param scores the scores
+   * @param stringBuilder the builder
+   */
+  private void buildScoreFromInput(String[] scores, StringBuilder stringBuilder) {
+    for (int i = 0; i < scores.length;) {
+      // if it's an X, then append a single character.
+      if (scores[i].equals("X")) {
+        // once we hit, 10, we need to concatenate the rest without (-) like XX
+        if (i < 10)
+          stringBuilder.append(scores[i]).append("-");
+        else
+          stringBuilder.append(scores[i]);
+        i++;
+
+      } else {
+        // check that we can pick two scores at a time to represent throws for a single frame (5/)
+        if (i + 1 < scores.length) {
+          stringBuilder.append(scores[i]).append(scores[i + 1]).append("-");
+          i += 2;
+        } else {
+          stringBuilder.append(scores[i]);
+          i++;
+        }
+      }
+    }
   }
 }
