@@ -1,0 +1,6 @@
+spring:
+ application:
+  name: interview-wizard
+
+ profiles:
+   active: dev

@@ -1,0 +1,55 @@
+/*body {*/
+/*background: url(img/bowling.jpg) no-repeat fixed bottom left;*/
+/*background-size: cover;*/
+/*}*/
+
+.title {
+    margin: 5% auto;
+}
+
+.score-buttons {
+    margin: 3% auto;
+}
+
+table.score-table-display {
+    width: 80%;
+    font-size: 12px;
+    border: 1px solid;
+    text-align: center;
+    table-layout: fixed;
+    margin: 0 auto 40px;
+}
+
+table.score-table-display th, tr, td {
+    padding: 0;
+    vertical-align: middle;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+table.score-table-display th {
+    border-bottom: 1px solid;
+    background-color: #6fff08;
+    height: 30px;
+}
+
+table.score-table-display th:not(:last-child) {
+    border-right: 1px solid;
+}
+
+table.score-table-display td {
+    height: 30px;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+table.score-table-display tr td:not(:last-child) {
+    border-right: 1px solid;
+}
+
+table.score-table-display tr:nth-child(2) td:nth-child(even) {
+    border-bottom: 1px solid;
+}
+
+table.score-table-display tr:nth-child(2) td:last-child {
+    border-bottom: 1px solid;
+}
